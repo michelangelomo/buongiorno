@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: buongiorno-bot-secrets
+  namespace: default
+type: Opaque
+data:
+  discord-token: "UE9SQ09ESU9PT09PT08="
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: buongiorno-bot
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: buongiorno-bot
+  template:
+    metadata:
+      labels:
+        app: buongiorno-bot
+    spec:
+      containers:
+        - name: backend
+          image: michelangelomorrillo/buongiorno:latest
+          env:
+            - name: DISCORD_BOT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: buongiorno-bot-secrets
+                  key: discord-token
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 250m

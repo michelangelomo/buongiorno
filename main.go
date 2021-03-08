@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"io/ioutil"
 	"math/rand"
@@ -18,6 +17,7 @@ import (
 var (
 	images []*image
 	token string
+	tokenEnvVar = "DISCORD_BOT_TOKEN"
 )
 
 type image struct {
@@ -53,8 +53,7 @@ func main() {
 		i.loadImages()
 	}
 
-	flag.StringVar(&token, "t", "", "Bot Token")
-	flag.Parse()
+	token = os.Getenv(tokenEnvVar)
 	
 	initDiscordBot()
 }
