@@ -30,6 +30,7 @@ type image struct {
 func main() {
 	images = append(images, &image{baseAddress: "https://ticondivido.it/buongiorno/", command: "buongiorno", pages: 6})
 	images = append(images, &image{baseAddress: "https://ticondivido.it/buonanotte-2/", command: "buonanotte", pages: 6})
+	images = append(images, &image{baseAddress: "https://ticondivido.it/immagini-buona-serata/", command: "sera", pages: 2})
 	
 	images = append(images, &image{baseAddress: "https://ticondivido.it/immagini-buon-lunedi/", command: "lunedi", pages: 6})
 	images = append(images, &image{baseAddress: "https://ticondivido.it/immagini-buon-martedi/", command: "martedi", pages: 6})
