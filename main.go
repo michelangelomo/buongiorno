@@ -50,7 +50,8 @@ func main() {
 	images = append(images, &image{baseAddress: "https://ticondivido.it/immagini-buon-ferragosto/", command: "ferragosto", pages: 0})
 	images = append(images, &image{baseAddress: "https://ticondivido.it/immagini-festa-del-papa/", command: "papa", pages: 0})
 	images = append(images, &image{baseAddress: "https://ticondivido.it/immagini-buon-pomeriggio/", command: "buon-pomeriggio", pages: 1})
-
+	images = append(images, &image{baseAddress: "https://ticondivido.it/immagini-buona-pasqua/", command: "buona-pasqua", pages: 0})
+	images = append(images, &image{baseAddress: "https://ticondivido.it/immagini-buona-pasquetta/", command: "buona-pasquetta", pages: 0})
 
 	for _, i := range(images) {
 		i.loadImages()
